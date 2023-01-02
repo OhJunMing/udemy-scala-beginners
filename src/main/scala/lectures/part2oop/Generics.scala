@@ -2,6 +2,16 @@ package lectures.part2oop
 
 object Generics extends App {
 
+  /*
+  Method accepts a type and all its subclasses (upper bound)
+  public <T extends UpperBoundClass> List<T> fromArrayToList(T[] a) {...}
+
+  Methods accepts a type and all its superclasses (lower bound).
+  public <? super T> List<T> fromArrayToList(T[] a) {...}
+  <? super T> means unknown type that is a superclass of T (= T and all its parents).
+  */
+
+
   class MyList[+A] {
     // use the type A
     def add[B >: A](element: B): MyList[B] = ???
